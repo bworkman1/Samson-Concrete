@@ -1,7 +1,8 @@
 <div id="page-content">
+  <h2 class="text-danger">Samson Concrete, L.L.C</h2>
+      <hr>
   <div class="row">
     <div class="col-md-6">
-      <h2 class="text-danger">Samson Concrete, L.L.C</h2>
       <p><b>Samson Concrete, L.L.C.</b>, (originally G&M Concrete) was established in 1975. We are a Christian-based company that puts God first and operates with integrity and honesty 100% of the time - something that is almost unheard of in the construction industry.</p>
       <p>We use only the <b>best</b> available materials on every job. We are fully insured and provide proof of this insurance and workers compensation coverage , as required by the state of Ohio ,with every proposal.</p>
     </div>

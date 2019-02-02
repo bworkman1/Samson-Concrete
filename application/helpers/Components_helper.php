@@ -7,7 +7,7 @@ if ( ! function_exists('navMenu'))
         $nav = [
           [
             'label' => 'Home',
-            'url' => base_url('home'),
+            'url' => base_url(),
           ],
           [
             'label' => 'Services',

@@ -1,7 +1,8 @@
 <div id="page-content">
+	<h2 class="text-danger">What we can do</h2>
+	<hr>
 	<div class="row">
 		<div class="col-md-6">
-			<h2 class="text-danger">What we can do</h2>
 			<p>At <b>Samson Concrete</b>, we are equipped to handle all your concrete needs, new work, and replacement work, from footers to concrete roofs, and everything in between. We offer stained, stamped, and decorative concrete and we service residential, commercial and industrial properties.</p>
 		</div>
 

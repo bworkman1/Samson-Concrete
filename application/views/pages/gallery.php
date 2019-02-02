@@ -1,6 +1,6 @@
 <div id="page-content">
 	<h2 class="text-danger">Gallery <?php echo $gallery == '' ? '' : '('.ucwords($gallery).')' ; ?></h2>
-
+	<hr>
 	<?php
 
 		$numOfCols = 3;
