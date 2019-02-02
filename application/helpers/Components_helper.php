@@ -44,8 +44,7 @@ if ( ! function_exists('getDescription'))
 {
     function getDescription() 
     {
-    	$keywords = 'paving, concrete, seal coating, Asphalt Cutting, Asphalt Paving, Asphalt Removal, Asphalt Repair, Asphalt Sealing, Basement Waterproofing, Basketball Court Construction, Basketball Court Resurfacing, Brick &amp; Stone Paving, Brick and Stone Driveway Installation, Concrete Breaking, Concrete Construction, Concrete Delivery, Concrete Drilling, Concrete Paving, Concrete Pumping, Concrete Removal, Concrete Repair, Concrete Shotcrete, Faux Paving, Fireplace Installation, Foundation Inspection, Foundation Repair, Install Brick or Stone, Mud Jacking, Other Concrete Services, Paver Installation, Pavers Maintenance, Paving Services, Repair Brick or Stone, Tennis Court Construction, Aprons, Driveways, Pads, Patios, Retaining Walls, Sidewalks, Stamped Concrete, Stone Sidewalks
-			Walls';
+    	$keywords = 'At Samson Concrete, we are equipped to handle all your concrete needs, new work, and replacement work, from footers to concrete roofs, and everything in between. We offer stained, stamped, and decorative concrete and we service residential, commercial and industrial properties.';
 
 		return $keywords;
     }

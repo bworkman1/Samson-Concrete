@@ -63,14 +63,18 @@
 			}
 		echo '</div>';
 
+		echo '<hr>';
+
 		if($showGalleryButton) {
 			echo '<div class="spacer"></div>';
 
 			echo '<div class="d-flex">';
 				echo '<ul class="gallery-list list-inline mx-auto justify-content-center">';
-					foreach($galleries as $name => $gallery) {
+					foreach($galleries as $name => $gal) {
 						echo '<li class="list-inline-item">';
-							echo '<a href="'.current_url().'/?gallery='.url_title(strtolower($name)).'">' . ucwords(strtolower($name)) . '</a> / ';
+							$activeUrl = strtolower($gallery) == strtolower($name) ? 'active' : '';
+
+							echo '<a href="'.current_url().'/?gallery='.url_title(strtolower($name)).'" class="' . $activeUrl . '">' . ucwords(strtolower($name)) . '</a> / ';
 						echo '</li>';
 					}
 				echo '</ul>';

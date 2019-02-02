@@ -78,6 +78,7 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
 .mobile-gallery-title {
 	position: absolute;
     bottom: 0;
@@ -86,15 +87,24 @@ body {
     width: 95%;
 	padding-top: 5px;
 }
+
 ul.gallery-list li a {
   color: #686B72;
   -webkit-transition: all 200ms ease-in;
--moz-transition: all 200ms ease-in;
--ms-transition: all 200ms ease-in;
--o-transition: all 200ms ease-in;
-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
 }
-ul.gallery-list li a:hover, ul.gallery-list li a:link {
-  color: #DC3545;
+
+ul.gallery-list li a:hover, ul.gallery-list li a:link, ul.gallery-list li a:visited {
+  color: #444;
   text-decoration: none;
+}
+
+ul.gallery-list li a.active {
+  color: #DC3545;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: underline;
 }
