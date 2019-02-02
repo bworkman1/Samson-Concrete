@@ -15,18 +15,24 @@
 
 				foreach($galleries[strtoupper($gallery)] as $i => $image) {
 					echo '<div class="col-md-4">';
-						echo '<a 
-							href="' . $image['path'] . '" 
-							rel="lightbox" 
-							data-lightbox="image-'.$i.'" 
-							data-title="'.$image['alt'].'">';
+						echo '<div class="image-container">';
+							echo '<a 
+								href="' . $image['path'] . '" 
+								rel="lightbox" 
+								data-lightbox="' . $gallery . '" 
+								data-title="'.$image['alt'].'">';
 
-							echo '<img 
-								src="' . $image['path'] . '" 
-								class="img-fluid image-border" 
-								alt="'.$image['alt'].'" >';
+								echo '<img 
+									src="' . $image['path'] . '" 
+									class="img-fluid image-border image" 
+									alt="'.$image['alt'].'">';
 
-						echo '</a>';
+								echo '<div class="middle">';
+									echo '<h4 class="text">View Image</h4>';
+								echo '</div>';
+
+							echo '</a>';
+						echo '</div>';
 					echo '</div>';
  
 					$count++;
@@ -39,9 +45,9 @@
 					echo '<div class="col-md-4">';
 						echo '<div class="image-container">';
 							echo '<a href="'.current_url().'/?gallery='.url_title(strtolower($name)).'">';
-								echo '<img src="' . $gallery[0]['path'] . '" class="img-fluid image image-border">';
+								echo '<img src="' . $gallery[0]['path'] . '" class="img-fluid image image-border gallery-image">';
 							
-								echo '<div class="middle">';
+								echo '<div class="middle gallery-middle">';
 									echo '<h4 class="text">' . $name . '</h4>';
 								echo '</div>';
 							echo '</a>';
@@ -76,10 +82,3 @@
 		}
 	?>
 </div>
-<!-- 
-<div class="image-container">
-  <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
-  <div class="middle">
-    <div class="text">John Doe</div>
-  </div>
-</div> -->

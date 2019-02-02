@@ -22,9 +22,7 @@ class Gallery extends CI_Controller {
 	{
 		$this->load->model('Gallery_model');
 
-		$this->load->helper('Components');
-
-		$data['navItems'] = nav_menu();
+		$data['navItems'] = navMenu();
 
         $data['gallery'] = $this->input->get('gallery');
         $data['galleries'] = $this->Gallery_model->getGallery();

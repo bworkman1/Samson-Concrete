@@ -20,9 +20,7 @@ class Contact_us extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->helper('Components');
-
-		$data['navItems'] = nav_menu();
+		$data['navItems'] = navMenu();
 
 		$this->load->view('theme/header');
 

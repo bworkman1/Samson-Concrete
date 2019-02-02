@@ -5,20 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-    <meta name="keywords" content="paving, concrete, seal coating, Asphalt Cutting, Asphalt Paving, Asphalt Removal, Asphalt Repair, Asphalt Sealing, Basement Waterproofing, Basketball Court Construction, Basketball Court Resurfacing, Brick &amp; Stone Paving, Brick and Stone Driveway Installation, Concrete Breaking, Concrete Construction, Concrete Delivery, Concrete Drilling, Concrete Paving, Concrete Pumping, Concrete Removal, Concrete Repair, Concrete Shotcrete, Faux Paving, Fireplace Installation, Foundation Inspection, Foundation Repair, Install Brick or Stone, Mud Jacking, Other Concrete Services, Paver Installation, Pavers Maintenance, Paving Services, Repair Brick or Stone, Tennis Court Construction, Aprons, Driveways, Pads, Patios, Retaining Walls, Sidewalks, Stamped Concrete, Stone Sidewalks
-Walls"/>
-    <meta name="description" content="At Samson Concrete, we are equipped to handle all your concrete needs, new work, and replacement work, from footers to concrete roofs, and everything in between. We offer stained, stamped, and decorative concrete and we service residential, commercial and industrial properties.">
-    <meta name="author" content="Samson Concrete | Newark OH">
+    <meta name="keywords" content="<?php echo getKeywords(); ?>"/>
+    <meta name="description" content="<?php echo getDescription(); ?>">
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content="Samson Concrete | Newark OH"/>
-    <meta name="twitter:description" content="At Samson Concrete, we are equipped to handle all your concrete needs, new work, and replacement work, from footers to concrete roofs, and everything in between. We offer stained, stamped, and decorative concrete and we service residential, commercial and industrial properties."/>
-    <meta property="og:description" content="At Samson Concrete, we are equipped to handle all your concrete needs, new work, and replacement work, from footers to concrete roofs, and everything in between. We offer stained, stamped, and decorative concrete and we service residential, commercial and industrial properties."/>
-    <meta property="og:title" content="Samson Concrete | Newark OH"/>
+    <meta name="twitter:description" content="<?php echo getDescription(); ?>"/>
+    <meta property="og:description" content="<?php echo getDescription(); ?>"/>
+    <meta property="og:title" content="<?php echo getTitle(); ?>"/>
 
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="<?php echo base_url('/assets/images/favicon.ico'); ?>">
 
-    <title>Samson Concrete LLC - Central Ohio</title>
+    <title><?php echo getTitle(); ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">

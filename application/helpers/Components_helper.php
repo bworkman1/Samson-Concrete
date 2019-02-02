@@ -1,8 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-if ( ! function_exists('nav_menu'))
+if ( ! function_exists('navMenu'))
 {
-    function nav_menu()
+    function navMenu()
     {
         $nav = [
           [
@@ -25,4 +25,40 @@ if ( ! function_exists('nav_menu'))
 
         return $nav;
     }
+}
+
+
+if ( ! function_exists('getKeywords'))
+{
+    function getKeywords() 
+    {
+    	$keywords = 'paving, concrete, seal coating, Asphalt Cutting, Asphalt Paving, Asphalt Removal, Asphalt Repair, Asphalt Sealing, Basement Waterproofing, Basketball Court Construction, Basketball Court Resurfacing, Brick &amp; Stone Paving, Brick and Stone Driveway Installation, Concrete Breaking, Concrete Construction, Concrete Delivery, Concrete Drilling, Concrete Paving, Concrete Pumping, Concrete Removal, Concrete Repair, Concrete Shotcrete, Faux Paving, Fireplace Installation, Foundation Inspection, Foundation Repair, Install Brick or Stone, Mud Jacking, Other Concrete Services, Paver Installation, Pavers Maintenance, Paving Services, Repair Brick or Stone, Tennis Court Construction, Aprons, Driveways, Pads, Patios, Retaining Walls, Sidewalks, Stamped Concrete, Stone Sidewalks
+			Walls';
+
+		return $keywords;
+    }
+
+}
+
+if ( ! function_exists('getDescription'))
+{
+    function getDescription() 
+    {
+    	$keywords = 'paving, concrete, seal coating, Asphalt Cutting, Asphalt Paving, Asphalt Removal, Asphalt Repair, Asphalt Sealing, Basement Waterproofing, Basketball Court Construction, Basketball Court Resurfacing, Brick &amp; Stone Paving, Brick and Stone Driveway Installation, Concrete Breaking, Concrete Construction, Concrete Delivery, Concrete Drilling, Concrete Paving, Concrete Pumping, Concrete Removal, Concrete Repair, Concrete Shotcrete, Faux Paving, Fireplace Installation, Foundation Inspection, Foundation Repair, Install Brick or Stone, Mud Jacking, Other Concrete Services, Paver Installation, Pavers Maintenance, Paving Services, Repair Brick or Stone, Tennis Court Construction, Aprons, Driveways, Pads, Patios, Retaining Walls, Sidewalks, Stamped Concrete, Stone Sidewalks
+			Walls';
+
+		return $keywords;
+    }
+}
+
+if ( ! function_exists('getTitle'))
+{
+	// I COULD HAVE SET THIS THE CONSTANTS FILE BUT FOR CONSITANCY I WANTED TO KEEP IT HERE
+    function getTitle() 
+    {
+    	$websiteTitle = 'Samson Concrete LLC | Central OH';
+
+		return $websiteTitle;
+    }
+
 }
