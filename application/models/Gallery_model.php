@@ -4,13 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Gallery_model extends CI_Model {
 
 	private $Image_Directory_Path = 'assets/images/gallery/';
-	private $RandomAlts = ['Paving', 'Concrete', 'Seal Coating', 'Asphalt Cutting', 'Asphalt Paving', 'Asphalt Removal', 'Asphalt Repair', 'Asphalt Sealing', 'Basement Waterproofing', 'Basketball Court Construction', 'Basketball Court Resurfacing', 'Brick &amp; Stone Paving', 'Brick and Stone Driveway Installation', 'Concrete Breaking', 'Concrete Construction', 'Concrete Delivery', 'Concrete Drilling', 'Concrete Paving', 'Concrete Pumping', 'Concrete Removal', 'Concrete Repair', 'Concrete Shotcrete', 'Faux Paving', 'Fireplace Installation', 'Foundation Inspection', 'Foundation Repair', 'Install Brick or Stone', 'Mud Jacking', 'Other Concrete Services', 'Paver Installation', 'Pavers Maintenance', 'Paving Services', 'Repair Brick or Stone', 'Tennis Court Construction', 'Aprons', 'Driveways', 'Pads', 'Patios', 'Retaining Walls', 'Sidewalks', 'Stamped Concrete', 'Stone Sidewalks
-Walls'];
+	private $RandomAlts = [];
 
 	public function __construct() 
 	{
 		parent::__construct();
 		$this->load->helper('directory');
+
+		$this->RandomAlts = explode(', ', getKeywords());
 	}
 
 	public function getGallery()
@@ -67,21 +68,4 @@ Walls'];
 		return $name;
 	}
 
-
-
 }
-
-
-
-// $return = [
-// 	['directories'] = [
-// 		['name' => 'image.jpg']
-// 		['name' => 'image.jpg']
-// 	];
-// 	['images'] = [
-// 		[
-// 			'name' => 'image_for_truck.jpg', 
-// 			'alt' => 'image'
-// 		]
-// 	];
-// ];

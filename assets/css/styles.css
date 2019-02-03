@@ -108,3 +108,7 @@ ul.gallery-list li a.active {
   font-weight: bold;
   text-decoration: underline;
 }
+
+#project {
+  min-height: 125px;
+}

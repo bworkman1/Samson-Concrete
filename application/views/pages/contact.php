@@ -3,39 +3,40 @@
 	<hr>
 	<div class="row">
 		<div class="col-md-8">
-			<form>
+			<form action="" method="post">
+				<p>Fill Out The Form Below For A Free Estimate (<em><span class="text-danger">*</span> required field</em>)</p>
 		  		<div class="form-group row">
-		    		<label for="first_name" class="col-sm-4 col-form-label text-right">First Name:</label>
+		    		<label for="first_name" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> First Name:</label>
 		    		<div class="col-sm-8">
-		      			<input type="text" class="form-control" name="first_name" id="first_name" placeholder="">
+		      			<input type="text" class="form-control" required name="first_name" id="first_name" placeholder="">
 		    		</div>
 		  		</div>
 
 		  		<div class="form-group row">
-		    		<label for="last_name" class="col-sm-4 col-form-label text-right">Last Name:</label>
+		    		<label for="last_name" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> Last Name:</label>
 		    		<div class="col-sm-8">
-		      			<input type="text" class="form-control" name="last_name" id="last_name" placeholder="">
+		      			<input type="text" class="form-control" required name="last_name" id="last_name" placeholder="">
 		    		</div>
 		  		</div>
 
 		  		<div class="form-group row">
-		    		<label for="email" class="col-sm-4 col-form-label text-right">Email:</label>
+		    		<label for="email" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> Email:</label>
 		    		<div class="col-sm-8">
-		      			<input type="text" class="form-control" name="email" id="email" placeholder="">
+		      			<input type="text" class="form-control" required name="email" id="email" placeholder="">
 		    		</div>
 		  		</div>
 
 		  		<div class="form-group row">
 		    		<label for="phone" class="col-sm-4 col-form-label text-right">Phone:</label>
-		    		<div class="col-sm-8">
-		      			<input type="text" class="form-control" name="phone" id="phone" placeholder="">
+		    		<div class="col-sm-6">
+		      			<input type="text" class="form-control phone" name="phone" id="phone" placeholder="">
 		    		</div>
 		  		</div>
 
 		  		<div class="form-group row">
-		    		<label for="budget" class="col-sm-4 col-form-label text-right">Budget:</label>
-		    		<div class="col-sm-8">
-		      			<select class="custom-select mr-sm-2" id="budget" name="budget">
+		    		<label for="budget" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> Budget:</label>
+		    		<div class="col-sm-6">
+		      			<select class="custom-select mr-sm-2" required id="budget" name="budget">
 					        <option value="">Select One</option>
 					        <option value="Just Looking">Just Looking</option>
 					        <option value="$0 to $1000">$0 to $1,000</option>
@@ -48,15 +49,15 @@
 		  		
 		  		<div class="form-group row">
 		    		<label for="project_date" class="col-sm-4 col-form-label text-right">Project Date:</label>
-		    		<div class="col-sm-8">
+		    		<div class="col-sm-6">
 		      			<input type="date" class="form-control" name="project_date" id="project_date" placeholder="">
 		    		</div>
 		  		</div>
 
 				<div class="form-group row">
-		    		<label for="project_date" class="col-sm-4 col-form-label text-right">Project:</label>
+		    		<label for="project_date" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> Project:</label>
 		    		<div class="col-sm-8">
-		      			<textarea class="form-control" name="project" id="project"></textarea>
+		      			<textarea class="form-control" required name="project" id="project"></textarea>
 		    		</div>
 		  		</div>
 
@@ -65,6 +66,8 @@
 						<button type="submit" class="btn btn-danger btn-lg">Submit</button>
 					</div>
 				</div>
+
+				<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
 			</form>
 		</div>
 
@@ -78,7 +81,7 @@
 	<script>
 		grecaptcha.ready(function() {
 	  		grecaptcha.execute('<?php echo RECAPTCHA_SITE_KEY; ?>', {action: 'contactus'}).then(function(token) {
-
+	  			document.getElementById('g-recaptcha-response').value = token;
 	  		}
 	  	);
 	});

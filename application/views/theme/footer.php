@@ -23,5 +23,9 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?php echo base_url('assets/js/ie10-viewport-bug-workaround.js'); ?>"></script>
     <script src="<?php echo base_url('/third_party/lightbox/js/lightbox.min.js'); ?>"></script>
+    <script src="<?php echo base_url('/third_party/mask/jquery.mask.js'); ?>"></script>
+    <script>
+    	$('.phone').mask('999-999-9999');
+    </script>
   </body>
 </html>
