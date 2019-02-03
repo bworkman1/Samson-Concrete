@@ -3,12 +3,13 @@
 	<hr>
 	<div class="row">
 		<div class="col-md-8">
-			<form action="" method="post">
+			<form id="contact-form" action="<?php echo base_url('/contact-us/send'); ?>" method="post">
 				<p>Fill Out The Form Below For A Free Estimate (<em><span class="text-danger">*</span> required field</em>)</p>
 		  		<div class="form-group row">
 		    		<label for="first_name" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> First Name:</label>
 		    		<div class="col-sm-8">
 		      			<input type="text" class="form-control" required name="first_name" id="first_name" placeholder="">
+		      			<div class="invalid-feedback">Name must be letters and spaces only</div>
 		    		</div>
 		  		</div>
 
@@ -16,6 +17,7 @@
 		    		<label for="last_name" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> Last Name:</label>
 		    		<div class="col-sm-8">
 		      			<input type="text" class="form-control" required name="last_name" id="last_name" placeholder="">
+		      			<div class="invalid-feedback">Name must be letters and spaces only</div>
 		    		</div>
 		  		</div>
 
@@ -23,6 +25,7 @@
 		    		<label for="email" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> Email:</label>
 		    		<div class="col-sm-8">
 		      			<input type="text" class="form-control" required name="email" id="email" placeholder="">
+		      			<div class="invalid-feedback">Please enter a valid email</div>
 		    		</div>
 		  		</div>
 
@@ -44,6 +47,7 @@
 					        <option value="$2,000 to $4,000">$2,000 to $4,000</option>
 					        <option value="$4,000 and Up">$4,000 and Up</option>
 		      			</select>
+		      			<div class="invalid-feedback">Please select one</div>
 		    		</div>
 		  		</div>
 		  		
@@ -58,12 +62,13 @@
 		    		<label for="project_date" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> Project:</label>
 		    		<div class="col-sm-8">
 		      			<textarea class="form-control" required name="project" id="project"></textarea>
+		      			<div class="invalid-feedback">Must be a min of 50 characters</div>
 		    		</div>
 		  		</div>
 
 				<div class="form-group row">
 					<div class="col-sm-12 text-right">
-						<button type="submit" class="btn btn-danger btn-lg">Submit</button>
+						<button id="submit-form" class="btn btn-danger btn-lg">Submit</button>
 					</div>
 				</div>
 
@@ -77,6 +82,8 @@
 		</div>
 	</div>
 </div>
+
+
 <script src="https://www.google.com/recaptcha/api.js?render=<?php echo RECAPTCHA_SITE_KEY; ?>"></script>
 	<script>
 		grecaptcha.ready(function() {
@@ -86,3 +93,4 @@
 	  	);
 	});
 	</script>
+

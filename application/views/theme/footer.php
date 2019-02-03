@@ -24,8 +24,6 @@
     <script src="<?php echo base_url('assets/js/ie10-viewport-bug-workaround.js'); ?>"></script>
     <script src="<?php echo base_url('/third_party/lightbox/js/lightbox.min.js'); ?>"></script>
     <script src="<?php echo base_url('/third_party/mask/jquery.mask.js'); ?>"></script>
-    <script>
-    	$('.phone').mask('999-999-9999');
-    </script>
+    <script src="<?php echo base_url('/assets/js/app.js'); ?>"></script>
   </body>
 </html>

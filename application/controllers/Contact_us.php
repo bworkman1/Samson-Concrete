@@ -30,4 +30,9 @@ class Contact_us extends CI_Controller {
 
 		$this->load->view('theme/footer', $data);
 	}
+
+	public function send()
+	{
+		
+	}
 }

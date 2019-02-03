@@ -33,7 +33,7 @@ class Gallery_model extends CI_Model {
 					
 					if(is_array($dir) && !empty($dir)) {
 						foreach($dir as $k => $img) {
-							$data[strtoupper(rtrim($key, '\\'))][] = $this->formatImageAttributes($img, $key);
+							$data[strtoupper(rtrim(rtrim($key, '/'), '\\'))][] = $this->formatImageAttributes($img, $key);
 						}
 					}
 				}
@@ -55,11 +55,11 @@ class Gallery_model extends CI_Model {
 
 	private function formatImageName($image)
 	{
-		$find = ['-', '_', 'IMG'];
-		$replace = [' ', ' ', ''];
+		$find = ['-', '_', 'IMG', 'MIN'];
+		$replace = [' ', ' ', '', ''];
 
 		$name = explode('.', $image)[0];
-		$name = trim(str_replace($find, $replace, preg_replace('/\d/', '', $name )));
+		$name = trim(str_replace($find, $replace, preg_replace('/\d/', '', strtoupper( $name) )));
 		
 		if(!$name) {
 			$name = 'Samson Concrete Central Ohio ' . $this->RandomAlts[rand(0, (count($this->RandomAlts) - 1))];
