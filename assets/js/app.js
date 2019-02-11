@@ -1,29 +1,36 @@
 $(function() {
 
-	$('.phone').mask('999-999-9999');
-	
-	document.getElementById('first_name').addEventListener("focusout",  
-		function() { ContactForm.inputLettersOnly(document.getElementById('first_name'),  2)
-	});
+	// CONTACT FORM EVENT LISTENERS
+	if(document.getElementById('contact-form') != null) { // IS FORM ON PAGE?
 
-	document.getElementById('last_name').addEventListener("focusout",  
-		function() { ContactForm.inputLettersOnly(document.getElementById('last_name'),  2)
-	});
+		$('.phone').mask('999-999-9999');
+		
+		document.getElementById('first_name').addEventListener("focusout",  
+			function() { ContactForm.inputLettersOnly(document.getElementById('first_name'),  2)
+		});
 
-	document.getElementById('budget').addEventListener("change",  
-		function() { ContactForm.hasValue(document.getElementById('budget')) 
-	});
+		document.getElementById('last_name').addEventListener("focusout",  
+			function() { ContactForm.inputLettersOnly(document.getElementById('last_name'),  2)
+		});
 
-	document.getElementById('email').addEventListener("focusout", ContactForm.isValidEmail);
+		document.getElementById('budget').addEventListener("change",  
+			function() { ContactForm.hasValue(document.getElementById('budget')) 
+		});
 
-	document.getElementById('project').addEventListener("focusout",  
-		function() { ContactForm.minLengthRequired(document.getElementById('project'),  50)
-	});
+		document.getElementById('email').addEventListener("focusout", ContactForm.isValidEmail);
 
-	document.getElementById('submit-form').addEventListener("click", 
-		function() { ContactForm.processForm(event) 
-	});
-	
+		document.getElementById('project').addEventListener("focusout",  
+			function() { ContactForm.minLengthRequired(document.getElementById('project'),  50)
+		});
+
+		document.getElementById('submit-form').addEventListener("click", 
+			function() { ContactForm.processForm(event) 
+		});
+
+	}
+
+	document.getElementById('loading').classList.add('hide');
+
 });
 
 
@@ -34,15 +41,38 @@ var ContactForm = {
 
 	processForm(event) {
 		event.preventDefault();
-		let form = [];
-		var elements = document.forms['contact-form'].elements;
-		const inputs = ContactForm.FormInputIds;
 
-		for(var i in inputs) {
-			
-		}
+		document.getElementById('loading').classList.remove('hide');
 
-		console.log(form);
+		const form = $('#contact-form').serialize();
+
+		$.post($('#contact-form').attr('action'), form).done(function(data) {
+			const res = $.parseJSON(data);
+			if(res.success) {
+				document.getElementById('loading').classList.add('hide');
+				ContactForm.resetForm();
+			} else {
+				ContactForm.displayFormErrors(res.data);
+				document.getElementById('loading').classList.add('hide');
+				ContactForm.resetGoogleRecaptcha();
+			}
+  		}).fail(function() {
+  			ContactForm.resetGoogleRecaptcha();
+    		document.getElementById('loading').classList.add('hide');
+  		});
+	},
+
+	resetForm() {
+		document.getElementById("contact-form").reset();
+		ContactForm.resetGoogleRecaptcha();
+		$('.is-valid').removeClass('is-valid');
+		$('.is-invalid').removeClass('is-invalid');
+	},
+
+	resetGoogleRecaptcha() {
+		grecaptcha.execute($('#contact-form').attr('data-sitekey'), {action: 'contactus'}).then(function(token) {
+  			document.getElementById('g-recaptcha-response').value = token;
+  		});
 	},
 
 	minLengthRequired(elem, length = 0) {
@@ -50,7 +80,6 @@ var ContactForm = {
 	},
 
 	hasValue(elem) {
-		console.log(elem.length);
 		elem.value.length === 0 ? ContactForm.markInputInvalid(elem) : ContactForm.markInputValid(elem);
 	},
 
@@ -95,6 +124,15 @@ var ContactForm = {
 	markInputValid(elem) {
 		ContactForm.resetInput(elem);
 		elem.classList.add('is-valid');
+	},
+
+	displayFormErrors(errors) {
+		if(errors) {
+			for(var i in errors) {			
+                console.log(i + ' = '+errors[i]);
+				$('#'.i).addClass('is-invalid').parent().find('.invalid-feedback').html(errors[i]);             
+			}         
+		}     
 	},
 }
 

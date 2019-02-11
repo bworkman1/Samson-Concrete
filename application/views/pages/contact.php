@@ -3,12 +3,12 @@
 	<hr>
 	<div class="row">
 		<div class="col-md-8">
-			<form id="contact-form" action="<?php echo base_url('/contact-us/send'); ?>" method="post">
+			<form id="contact-form" data-sitekey="<?php echo RECAPTCHA_SITE_KEY; ?>" action="<?php echo base_url('/contact-us/send'); ?>" method="post">
 				<p>Fill Out The Form Below For A Free Estimate (<em><span class="text-danger">*</span> required field</em>)</p>
 		  		<div class="form-group row">
 		    		<label for="first_name" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> First Name:</label>
 		    		<div class="col-sm-8">
-		      			<input type="text" class="form-control" required name="first_name" id="first_name" placeholder="">
+		      			<input type="text" class="form-control" required name="first_name" id="first_name" maxlength="30" placeholder="">
 		      			<div class="invalid-feedback">Name must be letters and spaces only</div>
 		    		</div>
 		  		</div>
@@ -16,7 +16,7 @@
 		  		<div class="form-group row">
 		    		<label for="last_name" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> Last Name:</label>
 		    		<div class="col-sm-8">
-		      			<input type="text" class="form-control" required name="last_name" id="last_name" placeholder="">
+		      			<input type="text" class="form-control" required name="last_name" id="last_name" maxlength="30" placeholder="">
 		      			<div class="invalid-feedback">Name must be letters and spaces only</div>
 		    		</div>
 		  		</div>
@@ -24,7 +24,7 @@
 		  		<div class="form-group row">
 		    		<label for="email" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> Email:</label>
 		    		<div class="col-sm-8">
-		      			<input type="text" class="form-control" required name="email" id="email" placeholder="">
+		      			<input type="text" class="form-control" required name="email" id="email" maxlength="50" placeholder="">
 		      			<div class="invalid-feedback">Please enter a valid email</div>
 		    		</div>
 		  		</div>
@@ -61,7 +61,7 @@
 				<div class="form-group row">
 		    		<label for="project_date" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> Project:</label>
 		    		<div class="col-sm-8">
-		      			<textarea class="form-control" required name="project" id="project"></textarea>
+		      			<textarea class="form-control" required name="project" id="project" maxlength="500"></textarea>
 		      			<div class="invalid-feedback">Must be a min of 50 characters</div>
 		    		</div>
 		  		</div>
@@ -84,7 +84,7 @@
 </div>
 
 
-<script src="https://www.google.com/recaptcha/api.js?render=<?php echo RECAPTCHA_SITE_KEY; ?>"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo RECAPTCHA_SITE_KEY; ?>&render=explicit"></script>
 	<script>
 		grecaptcha.ready(function() {
 	  		grecaptcha.execute('<?php echo RECAPTCHA_SITE_KEY; ?>', {action: 'contactus'}).then(function(token) {

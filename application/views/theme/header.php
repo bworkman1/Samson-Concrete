@@ -36,6 +36,7 @@
   </head>
 
   <body>
+    <div id="loading"></div>
     <div class="container">
       <div class="spacer"></div>
       <img src="<?php echo base_url('/assets/images/heading.gif'); ?>" class="img-fluid">

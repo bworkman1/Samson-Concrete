@@ -32,6 +32,10 @@
           echo '</li>';
         }
       ?>  
+
+      <li class="nav-item">
+        <span id="employment-link" data-toggle="modal" data-target="#employmentModal" class="nav-link">Employment</span>
+      </li>
     </ul>
   </div>
 </nav>
