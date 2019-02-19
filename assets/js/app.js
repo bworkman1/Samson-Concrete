@@ -42,20 +42,31 @@ var ContactForm = {
 	processForm(event) {
 		event.preventDefault();
 
+		const feedback = document.getElementById('form-feedback');
+		feedback.classList.remove('alert', 'alert-success');
+		feedback.innerHTML = '';
+
 		document.getElementById('loading').classList.remove('hide');
 
 		const form = $('#contact-form').serialize();
 
 		$.post($('#contact-form').attr('action'), form).done(function(data) {
 			const res = $.parseJSON(data);
+			
 			if(res.success) {
 				document.getElementById('loading').classList.add('hide');
 				ContactForm.resetForm();
+				feedback.classList.add('alert', 'alert-success');
 			} else {
 				ContactForm.displayFormErrors(res.data);
 				document.getElementById('loading').classList.add('hide');
 				ContactForm.resetGoogleRecaptcha();
+				feedback.classList.add('alert', 'alert-danger');
 			}
+
+			feedback.innerHTML = res.msg;
+			document.getElementById('contact-form').scrollIntoView();
+
   		}).fail(function() {
   			ContactForm.resetGoogleRecaptcha();
     		document.getElementById('loading').classList.add('hide');
@@ -129,9 +140,8 @@ var ContactForm = {
 	displayFormErrors(errors) {
 		if(errors) {
 			for(var i in errors) {			
-                console.log(i + ' = '+errors[i]);
-				$('#'.i).addClass('is-invalid').parent().find('.invalid-feedback').html(errors[i]);             
-			}         
+				$('#'+i).addClass('is-invalid').parent().find('.invalid-feedback').html(errors[i]);        
+			}
 		}     
 	},
 }

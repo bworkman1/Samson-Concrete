@@ -72,7 +72,7 @@ class Contact_us extends CI_Controller {
 					$feedback['msg'] = 'Emailed failed to send, please call us or email us directly.';
 				}
 			} else {
-
+				$feedback['msg'] = 'It looks as though you might be a spammer. Sorry for the inconvenience, please call us at 740 344-7036';
 			}	
         }
 
@@ -96,7 +96,7 @@ class Contact_us extends CI_Controller {
 		curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
 
 		$response = json_decode(curl_exec($verify));
-		log_message('error', print_r($response, true));
+	
 		return $response->success;
 	}
 

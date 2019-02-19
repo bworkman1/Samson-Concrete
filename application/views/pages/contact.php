@@ -5,6 +5,10 @@
 		<div class="col-md-8">
 			<form id="contact-form" data-sitekey="<?php echo RECAPTCHA_SITE_KEY; ?>" action="<?php echo base_url('/contact-us/send'); ?>" method="post">
 				<p>Fill Out The Form Below For A Free Estimate (<em><span class="text-danger">*</span> required field</em>)</p>
+
+
+				<div id="form-feedback"></div>
+			
 		  		<div class="form-group row">
 		    		<label for="first_name" class="col-sm-4 col-form-label text-right"><span class="text-danger">*</span> First Name:</label>
 		    		<div class="col-sm-8">
